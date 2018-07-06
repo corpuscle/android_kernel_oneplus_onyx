@@ -1113,8 +1113,8 @@ static const struct file_operations proc_oom_score_adj_operations = {
 	.llseek		= default_llseek,
 };
 
-#ifdef CONFIG_AUDITSYSCALL
 #define TMPBUFLEN 21
+#ifdef CONFIG_AUDITSYSCALL
 static ssize_t proc_loginuid_read(struct file * file, char __user * buf,
 				  size_t count, loff_t *ppos)
 {
