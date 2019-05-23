@@ -98,9 +98,8 @@
 #define __always_unused			__attribute__((unused))
 
 /* gcc version specific checks */
-#define _gcc_header(x) __gcc_header(linux/compiler-gcc##x.h)	
- #define gcc_header(x) _gcc_header(x)	#if GCC_VERSION < 30200
-#include gcc_header(__GNUC__)	# error Sorry, your compiler is too old - please upgrade it.
+#if GCC_VERSION < 30200
+# error Sorry, your compiler is too old - please upgrade it.
 #endif
 
  #if GCC_VERSION < 30300
